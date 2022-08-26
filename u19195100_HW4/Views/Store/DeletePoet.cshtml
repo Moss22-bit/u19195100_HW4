@@ -1,0 +1,82 @@
+﻿@model u19195100_HW4.Models.Poetry
+
+@{
+    ViewBag.Title = "DeletePoet";
+}
+
+<h2>DeletePoet</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Poetry</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Author)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReleaseDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Booktype)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Booktype)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+    </dl>
+
+    <button type="submit" value="Delete" class="btn btn-danger" onclick="window.location.href = '@Url.Action("DeletePoetInList","Store", new { Id = Model.ID })'"></button> |
+    <button type="submit" value="No " class="btn btn-primary" onclick="window.location.href = '@Url.Action("PoetIndex","Store")"></button>
+</div>

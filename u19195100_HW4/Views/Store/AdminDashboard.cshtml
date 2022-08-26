@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "AdminDashboard";
+}
+
+<h2>AdminDashboard</h2>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4">
+            <img src="https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=754&fit=clip" height="200" width="200" style="border-radius:12px"/>
+            <button class="btn btn-primary" onclick="window.location.href = '@Url.Action("DramaIndex","Store")'">Drama</button>
+        </div>
+        <div class="col-lg-4">
+            <img src="https://freebookbrowser.com/images/cool-icon/textbooks.jpg" height="200" width="200" style="border-radius:12px"/>
+            <button class="btn btn-success" onclick="window.location.href = '@Url.Action("EduIndex","Store")'">Education</button>
+        </div>
+        <div class="col-lg-4">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKS8tE5y_nj9WYZUvtQbZQP5KWrrqHyzbVow&usqp=CAU" height="200" width="200" style="border-radius:12px"/>
+            <button class="btn btn-warning" onclick="window.location.href = '@Url.Action("PoetIndex","Store")'">Poetry</button>
+        </div>
+    </div>
+</div>
+

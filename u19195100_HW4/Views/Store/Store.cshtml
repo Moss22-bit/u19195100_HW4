@@ -1,0 +1,244 @@
+﻿@model IEnumerable<u19195100_HW4.Models.Book>
+
+@{
+    ViewBag.Title = "Store";
+}
+
+
+<div>
+    <img src="https://a-better-africa.com/show/south-african-education-and-environment-project-cape-town-western-cape/image/2008090514-31057-7144-400x300/SAEP.jpeg" height="200" width="300">
+    <img src="//static.wixstatic.com/media/84dba8_dccf61e931264fd9ae744e87da0f10ec~mv2_d_3504_2336_s_2.jpg/v1/fill/w_640,h_578,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/84dba8_dccf61e931264fd9ae744e87da0f10ec~mv2_d_3504_2336_s_2.jpg" height="710" width="1150" />
+
+
+
+
+    <h1>Education</h1>
+    <div class="container-fluid">
+        <div class="row">
+            @foreach (var item in Model.Where(x => x._Booktype == "Education"))
+            {
+                <div class="col-lg-3">
+                    <div class="card" style="width: 280px; background-color:white !important;padding:10px;border-radius:5px">
+
+                        <img class="card-img-top" src="@Url.Content(item.Image)" height="250" width="280">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">@item.Name</h5>
+
+                            <p class="card-text">@item.Description</p>
+
+                            <button class="btn btn-primary" style="border-radius: 20px !important" data-toggle="modal" data-target="#exampleModal-@item.ID"> View </button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <h1>Drama</h1>
+    <div class="container-fluid">
+        <div class="row">
+            @foreach (var item in Model.Where(x => x._Booktype == "Drama"))
+            {
+                <div class="col-lg-3">
+                    <div class="card" style="width: 280px; background-color:white !important;padding:10px;border-radius:20px">
+
+                        <img class="card-img-top" src="@Url.Content(item.Image)" height="250" width="280">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">@item.Name</h5>
+
+                            <p class="card-text">@item.Description</p>
+
+                            <button class="btn btn-primary" style="border-radius: 20px !important" data-toggle="modal" data-target="#exampleModal-@item.ID"> View </button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+
+    <h1>Poetry</h1>
+    <div class="container-fluid">
+        <div class="row">
+            @foreach (var item in Model.Where(x => x._Booktype == "Poetry"))
+            {
+                <div class="col-lg-3">
+                    <div class="card" style="width: 280px; background-color:white !important;padding:10px;border-radius:20px">
+
+                        <img class="card-img-top" src="@Url.Content(item.Image)" height="250" width="280">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">@item.Name</h5>
+
+                            <p class="card-text">@item.Description</p>
+
+                            <button class="btn btn-primary" style="border-radius: 20px !important" data-toggle="modal" data-target="#exampleModal-@item.ID"> View </button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <!--Modal-->
+    @foreach (var item in Model)
+    {
+        <div class="modal fade" id="exampleModal-@item.ID" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style="background-color: white; color: black ">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"><h4>Title</h4>@item.Name</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h4>About Writer</h4>@item.ItemWritter()
+                        <hr />
+                        <p><h4>About Book</h4>@item.ItemAbout()</p>
+
+                    </div>
+                    <div class="modal-footer">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    <br />
+    <br />
+
+    <!--Bootstrap Grid System-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <h4 style="background-color: black; color: white ">Use Case 1</h4>
+                <img src="~/Content/Usecases/Screenshot (95).png" height="550" width="460" />
+            </div>
+            <div class="col-lg-6">
+                <h4 style="background-color: black; color: white ">Use Case 2</h4>
+                <img src="~/Content/Usecases/Screenshot (96).png" height="550" width="460" />
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <h4 style="background-color: black; color: white ">Use Case 3</h4>
+                <img src="~/Content/Usecases/Screenshot (97).png" height="550" width="460" />
+            </div>
+            <div class="col-lg-6">
+                <h4 style="background-color: black; color: white ">Use Case 4</h4>
+                <img src="~/Content/Usecases/Screenshot (98).png" height="550" width="460" />
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <h4 style="background-color: black; color: white ">Use Case 5</h4>
+                <img src="~/Content/Usecases/Screenshot (99).png" height="550" width="460" />
+            </div>
+            <div class="col-lg-6">
+                <h4 style="background-color: black; color: white ">Use Case 6</h4>
+                <img src="~/Content/Usecases/Screenshot (100).png" height="550" width="460" />
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <h4 style="background-color: black; color: white ">Use Case 7</h4>
+                <img src="~/Content/Usecases/Screenshot (101).png" height="550" width="460" />
+            </div>
+            <div class="col-lg-6">
+                <h4 style="background-color: black; color: white ">Use Case 8</h4>
+                <img src="~/Content/Usecases/Screenshot (102).png" height="550" width="460" />
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <h4 style="background-color: black; color: white ">Use Case 9</h4>
+                <img src="~/Content/Usecases/Screenshot (103).png" height="550" width="460" />
+            </div>
+            <div class="col-lg-6">
+                <h4 style="background-color: black; color: white ">Use Case 10</h4>
+                <img src="~/Content/Usecases/Screenshot (104).png" height="550" width="460" />
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <h4 style="background-color: black; color: white ">Use Case 11</h4>
+                <img src="~/Content/Usecases/Screenshot (105).png" height="550" width="460" />
+            </div>
+            <div class="col-lg-6">
+                <h4 style="background-color: black; color: white ">Use Case 12</h4>
+                <img src="~/Content/Usecases/Screenshot (106).png" height="550" width="460" />
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <h4 style="background-color: black; color: white ">Use Case 13</h4>
+                <img src="~/Content/Usecases/Screenshot (107).png" height="550" width="460" />
+            </div>
+            <div class="col-lg-6">
+                <h4 style="background-color: black; color: white ">Use Case 14</h4>
+                <img src="~/Content/Usecases/Screenshot (108).png" height="550" width="460" />
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <h4 style="background-color: black; color: white ">Use Case 15</h4>
+                <img src="~/Content/Usecases/Screenshot (109).png" height="550" width="460" />
+            </div>
+        </div>
+    </div>
+    <br /><br />
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4">
+                <h3 style="background-color: black; color: white ">SDG</h3>
+                <p>
+                    The sustainable development goal for this appication is quality education which is goal number 4.
+                    I chose this goal because it addresses the challenges of education to improve its quality in developing countries or communities across the globe. Moreover, the quality of education in South African suburbs, townships, and rural areas is not the same. In rural areas, most of schools are not equipped with necessary resources to support the education of the learners and very few of them have access to the study materials such as textbooks, computers etc. As a result, the performance of schools in these developing communities is poor.
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <h3 style="background-color: black; color: white ">NPO</h3>
+                <p>
+                    The South African Education Project (SAEP) is a non-profit organisation, based in
+
+                    Cape Town, South Africa.
+
+                    Since 1994, we have provided education, life skills, and
+
+                    psycho-social support programmes for children youth and education providers.
+                </p>
+                <p>
+                    E-Mail: info@saep.org<br />Contact: 021 447 3610<br />Address: SAEP SA Unit B15 <br /> Waverley Court7 Kotzee Rd <br /> Mowbray <br /> Cape Town <br /> 7925
+                </p>
+
+            </div>
+            <div class="col-lg-4">
+                <h3 style="background-color: black; color: white ">Motivation</h3>
+                <p>
+                    This NPO wants an application that can assist them provide variety of textbooks for learners in rural areas whereby these books will be accessed for free. In short, they want to make sure that these books reach the intended audiences which are the poor learners.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
